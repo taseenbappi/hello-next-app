@@ -1,3 +1,78 @@
 {
-  "extends": "next/core-web-vitals"
+  // Basic settings
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  // Plugins and Extends
+  "plugins": ["react-refresh", "@typescript-eslint"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  // Overrides & Rules
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx", "./postcss.config.js"],
+      "excludedFiles": "next.config.mjs",
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ],
+  "rules": {
+    "arrow-body-style": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/no-unescaped-entities": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
+    "no-console": "warn",
+    "consistent-return": "off",
+    "semi": ["error", "always"],
+    "no-unused-vars": "warn",
+    "react-refresh/only-export-components": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  // ignorePatterns
+  "ignorePatterns": ["build", "**/*.d.ts"]
 }
