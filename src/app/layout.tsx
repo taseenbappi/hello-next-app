@@ -1,6 +1,7 @@
 "use client";
-import AppFooter from "@/components/AppFooter/AppFooter";
-import AppHeader from "@/components/AppHeader/AppHeader";
+
+import AppFooter from "components/AppFooter/AppFooter";
+import AppHeader from "components/AppHeader/AppHeader";
 import { Metadata } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
